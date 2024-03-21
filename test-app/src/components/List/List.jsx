@@ -38,6 +38,12 @@ export const List = () => {
               transmission={item.transmission}
               engine={item.engine}
               rating={item.rating}
+              form={item.form}
+              length={item.length}
+              width={item.width}
+              height={item.height}
+              tank={item.tank}
+              consumption={item.consumption}
             />
           ))}
         </ul>

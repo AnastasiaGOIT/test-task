@@ -67,8 +67,8 @@
   gap: 8px;
 }
 
-icon {
-  stroke: #000;
+.icon {
+  fill: black;
 }
 .description {
   margin-bottom: 24px;

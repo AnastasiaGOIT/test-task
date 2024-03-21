@@ -3,6 +3,7 @@ import css from "../Card/Card.module.css";
 import sprite from "../../icons/sprite.svg";
 import style from "./Features.module.css";
 import { Form } from "../Form/Form";
+import { Details } from "../Details/Details";
 
 export const Features = ({ props }) => {
   return (
@@ -19,6 +20,13 @@ export const Features = ({ props }) => {
             <use href={`${sprite}#automatic`} />
           </svg>
           {props.transmission}
+        </li>
+        <li className={css.item}>
+          {" "}
+          <svg width={20} height={20} className={css.icon}>
+            <use href={`${sprite}#icon-conditioner`} />
+          </svg>
+          AC
         </li>
         <li className={css.item}>
           {" "}
@@ -46,9 +54,31 @@ export const Features = ({ props }) => {
           <svg width={20} height={20} className={css.icon}>
             <use href={`${sprite}#icon-conditioner`} />
           </svg>
-          AC
+          {props.details.airConditioner}air conditioner
+        </li>
+        <li className={css.item}>
+          {" "}
+          <svg width={20} height={20} className={css.icon}>
+            <use href={`${sprite}#icon-cd`} />
+          </svg>
+          CD
+        </li>
+        <li className={css.item}>
+          {" "}
+          <svg width={20} height={20} className={css.icon}>
+            <use href={`${sprite}#icon-radio`} />
+          </svg>
+          Radio
+        </li>
+        <li className={css.item}>
+          {" "}
+          <svg width={20} height={20} className={css.icon}>
+            <use href={`${sprite}#icon-hob`} />
+          </svg>
+          {props.details.hob} hobs
         </li>
       </ul>
+      <Details props={props} />
     </div>
   );
 };
