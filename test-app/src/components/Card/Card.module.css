@@ -11,6 +11,19 @@
 .container_s {
   flex-direction: column;
 }
+.title {
+  color: #101828;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 30px; /* 125% */
+  margin-bottom: 8px;
+}
+.rating_location {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+}
 .name_price {
   display: flex;
   flex-direction: row;
@@ -21,13 +34,21 @@
   object-fit: cover;
   height: 100%;
 }
-
+.price {
+  color: #101828;
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 30px; /* 125% */
+}
 .list {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
   margin-bottom: 24px;
 }
+
 .item {
   padding: 12px 18px;
   border-radius: 100px;
@@ -49,7 +70,10 @@
 icon {
   stroke: #000;
 }
-
+.description {
+  margin-bottom: 24px;
+  text-align: left;
+}
 .button_red {
   border: 1px solid #000;
   border-radius: 200px;
@@ -64,6 +88,8 @@ icon {
   color: #fff;
   font-family: "Inter", sans-serif;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
 }
 .button_red:hover {
   background-color: #d84343;

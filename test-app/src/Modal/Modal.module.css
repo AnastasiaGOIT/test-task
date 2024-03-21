@@ -5,7 +5,7 @@
   left: 0;
   top: 0;
   pointer-events: auto;
-  background-color: var(--backdrop);
+  background-color: rgba(0, 0, 0, 0.5);
   z-index: 999;
 }
 
@@ -15,15 +15,16 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  max-width: 400px;
-  /* height: 234px; */
-  border-radius: 8px;
-  background-color: var(--modal-back);
-  padding: 24px;
+  width: 982px;
+  border-radius: 20px;
+  background: #fff;
+  padding: 40px;
+  max-height: 600px;
+  overflow-y: auto;
 }
 
 .close_btn {
-  color: var(--main-color);
+  color: black;
   position: absolute;
   top: 14px;
   right: 14px;
@@ -38,5 +39,5 @@
   transform: rotate(45deg);
   width: 18px;
   height: 18px;
-  stroke: currentColor;
+  stroke: black;
 }

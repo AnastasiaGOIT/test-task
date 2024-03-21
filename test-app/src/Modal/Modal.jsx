@@ -1,7 +1,7 @@
+import { Button, Icon } from "@mui/material";
 import { useEffect } from "react";
 import { createPortal } from "react-dom";
-import Button from "components/ScreensPage/Button/Button";
-import Icon from "components/ScreensPage/Icon/Icon";
+
 import css from "./Modal.module.css";
 
 const modalRoot = document.querySelector("#modal-root2");

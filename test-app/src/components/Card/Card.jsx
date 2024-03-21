@@ -2,8 +2,22 @@ import { useState } from "react";
 import { Button } from "../Button";
 import css from "./Card.module.css";
 import sprite from "../../icons/sprite.svg";
+import Modal from "../../Modal/Modal";
+import { ShowMoreModal } from "../ShowMoreModal/ShowMoreModal";
+import Checkbox from "@mui/material/Checkbox";
+import FavoriteBorder from "@mui/icons-material/FavoriteBorder";
+import Favorite from "@mui/icons-material/Favorite";
+
+const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
 export const Card = (props) => {
+  const [openShowMore, setShowMore] = useState(false);
+  const [getIdColumn, setIdColumn] = useState(null);
+
+  const showMore = () => {
+    setShowMore(!openShowMore);
+  };
+
   const [expanded, setExpanded] = useState(false);
 
   const toggleExpand = () => {
@@ -27,16 +41,20 @@ export const Card = (props) => {
       </div>
       <div className={css.container_s}>
         <div className={css.name_price}>
-          <h3>{props.name}</h3>
-          <p>{props.price}</p>
+          <h3 className={css.title}>{props.name}</h3>
+          <p className={css.price}>€{props.price}</p>
 
-          <svg width={24} height={24} className={css.icon}>
-            <use href={`${sprite}#icon-heart`} />
-          </svg>
+          <Checkbox
+            {...label}
+            icon={<FavoriteBorder />}
+            checkedIcon={<Favorite />}
+          />
         </div>
-        <a>{props.rating}</a>
-        <p>{props.location}</p>
-        <p>
+        <div className={css.rating_location}>
+          <a>{props.rating}</a>
+          <p>{props.location}</p>
+        </div>
+        <p className={css.description}>
           {expanded
             ? props.description
             : shortenDescription(props.description, 100)}
@@ -83,7 +101,18 @@ export const Card = (props) => {
             AC
           </li>
         </ul>
-        <button children={"Show more"} className={css.button_red} />
+        {openShowMore && (
+          <Modal openModal={showMore}>
+            <ShowMoreModal closeModal={showMore} car={props} />
+          </Modal>
+        )}
+        <button
+          children={"Show more"}
+          className={css.button_red}
+          onClick={() => {
+            showMore();
+          }}
+        />
       </div>
     </div>
   );
