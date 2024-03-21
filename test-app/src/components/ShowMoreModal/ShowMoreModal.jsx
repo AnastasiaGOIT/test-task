@@ -1,4 +1,6 @@
 import React from "react";
+import { Features } from "../Features/Features";
+import { Form } from "../Form/Form";
 import css from "./ShowMoreModal.module.css";
 
 export const ShowMoreModal = ({ closeModal, car }) => {
@@ -37,6 +39,10 @@ export const ShowMoreModal = ({ closeModal, car }) => {
       <div className={css.features}>
         <h3>Features</h3>
         <h3>Reviews</h3>
+      </div>
+      <div className={css.block}>
+        <Features props={car} />
+        <Form />
       </div>
     </div>
   );

@@ -42,3 +42,14 @@
   display: flex;
   gap: 40px;
 }
+.line {
+  width: 902px;
+  height: 7px;
+
+  width: 1px;
+  color: rgba(16, 24, 40, 0.2);
+}
+.block {
+  display: flex;
+  justify-content: space-between;
+}
