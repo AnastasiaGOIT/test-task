@@ -1,6 +1,7 @@
 import React from "react";
 import { Features } from "../Features/Features";
 import { Form } from "../Form/Form";
+import { TabPanels } from "../TabPanel/TabPanel";
 import css from "./ShowMoreModal.module.css";
 
 export const ShowMoreModal = ({ closeModal, car }) => {
@@ -35,14 +36,10 @@ export const ShowMoreModal = ({ closeModal, car }) => {
           height="309px"
         />
       </div>
+
       <p className={css.description}>{car.description}</p>
       <div className={css.features}>
-        <h3>Features</h3>
-        <h3>Reviews</h3>
-      </div>
-      <div className={css.block}>
-        <Features props={car} />
-        <Form />
+        <TabPanels props={car} />
       </div>
     </div>
   );
